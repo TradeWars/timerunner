@@ -4,7 +4,7 @@ version = "0.1.0"
 authors = ["Southclaws <southclawjk@gmail.com>"]
 
 [dependencies]
-tokio = "0.1"
 iron = "0.6.0"
 uuid = { version = "0.6", features = ["v4"] }
 time = "*"
+dotenv = "0.13.0"
