@@ -1,7 +1,15 @@
-VERSION := $(shell date -u +%yw%W.%w.%H)
+VERSION := $(shell cat VERSION)
+NEW_VERSION := $(shell date -u +%yw%W.%w.%H)
 LDFLAGS := -ldflags "-X github.com/TradeWars/warehouse/server.version=$(VERSION)"
 -include .env
 
+
+# -
+# Local
+# -
+
+next:
+	echo $(NEW_VERSION) > VERSION
 
 # -
 # Testing
