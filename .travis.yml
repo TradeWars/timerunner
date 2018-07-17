@@ -4,6 +4,8 @@ language: rust
 cache: cargo
 services:
   - docker
+before_script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 jobs:
   include:
     # deploy only if on one of the main branches
