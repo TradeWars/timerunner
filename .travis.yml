@@ -14,7 +14,6 @@ jobs:
       name: deploy-branch
       if: branch IN (master, staging, develop)
       script:
-        - make static
         - docker build -t temp .
         - docker tag temp "southclaws/tw-timerunner:$TRAVIS_BRANCH"
         - docker push "southclaws/tw-timerunner:$TRAVIS_BRANCH"
@@ -22,7 +21,6 @@ jobs:
       name: deploy-tag
       if: tag IS present
       script:
-        - make static
         - docker build -t temp .
         - docker tag temp "southclaws/tw-timerunner:$TRAVIS_TAG"
         - docker push "southclaws/tw-timerunner:$TRAVIS_TAG"
